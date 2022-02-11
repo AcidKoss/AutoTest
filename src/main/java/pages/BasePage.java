@@ -7,14 +7,18 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import static Const.Const.Timeout.timeOutYavnoe;
 
+// Базовый класс для всех страниц
+
 public class BasePage {
     protected WebDriver driver;
     public BasePage(WebDriver driver){
+
         this.driver = driver;
     }
 
     // метод открытия страниц
     public void open (String url){
+
         driver.get(url);
     }
 
