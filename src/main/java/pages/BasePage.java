@@ -11,6 +11,8 @@ import static Const.Const.Timeout.timeOutYavnoe;
 
 public class BasePage {
     protected WebDriver driver;
+
+    // Конструктор
     public BasePage(WebDriver driver){
 
         this.driver = driver;

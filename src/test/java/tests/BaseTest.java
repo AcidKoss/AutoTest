@@ -9,7 +9,8 @@ import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.AfterTest;
 import pages.BasePage;
-import pages.YandexSearch;
+import pages.RezultPage;
+import pages.YandexSearchPage;
 
 import static common.Config.clearCookies_And_Local;
 import static common.Config.close_Brauser;
@@ -20,7 +21,8 @@ public class BaseTest {
     // наследники по страницам в виде объекта ???????????????
     protected BasePage basePage = new BasePage(driver);
     // передаем домашнюю страницу в виде объекта
-    protected YandexSearch yandexSearch = new YandexSearch(driver);
+    protected YandexSearchPage yandexSearch = new YandexSearchPage(driver);
+    protected RezultPage yandexRezultPage = new RezultPage(driver);
 
     // можно добавить полезные методы которые нужны для каждого теста
     // очистка Кук и локал стораж

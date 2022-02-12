@@ -4,11 +4,13 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+// Класс с действиями для конкретной страницы
+
 // связываем с BasePage - extends
-public class YandexSearch extends BasePage{
+public class YandexSearchPage extends BasePage{
 
 // создается конструктор
-    public YandexSearch(WebDriver driver) {
+    public YandexSearchPage(WebDriver driver) {
 
         super(driver);
     }
@@ -18,13 +20,16 @@ public class YandexSearch extends BasePage{
 
 
     //Метод для реализации логики на странице
-    public YandexSearch inStrokaSearch (){
-        driver.findElement(strokaSearch).sendKeys("Java");
+
+    // Установить значение в строку поиска
+    public YandexSearchPage StrokaSearch (String ZnacheniePoiska){
+        driver.findElement(strokaSearch).sendKeys(ZnacheniePoiska);
 
         //Вернуть текущий экземпляр
         return this;
     }
-    public YandexSearch clicSearch (){
+    //Нажатие на кнопку поиск
+    public YandexSearchPage clicSearch (){
         //Использование своего метода ожидания
         //Создаем новый элемент ВебЭлемент для кнопки и далее вызываем свой метод на явное ожидание куда передаем ВебЭлемент
         WebElement btnSearch = driver.findElement(buttonSearch);

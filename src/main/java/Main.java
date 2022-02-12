@@ -1,8 +1,10 @@
+//        (CTRL+ /) — Комментирование строки с помощью //.
+//        (CTRL + SHIFT + /) — Комментирование выделенного блока кода с помощью /**/
 import org.openqa.selenium.By;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.WebDriver;
 
-public class Main {
+public class Main  {
     public static void main(String[] args){
         System.setProperty("webdriver.chrome.driver","C:\\Selen\\drivers\\chromedriver.exe");
         ChromeDriver driver = new ChromeDriver();
@@ -12,6 +14,7 @@ public class Main {
         driver.get("https://yandex.ru/");
         driver.findElement(strokaSearch).sendKeys("Java");
         driver.findElement(buttonSearch).click();
+        System.out.println();
 
 
 

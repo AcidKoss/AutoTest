@@ -1,17 +1,23 @@
 package tests;
 
-import pages.YandexSearch;
+import org.testng.annotations.Test;
+
+import static Const.Const.Urls.UrlGlavnaya;
 
 public class SearchNaStraniceTest extends BaseTest{
 
+    @Test
     public void checkIsLoadingPageResult (){
         //Открываем нужную страницу
-        basePage.open("https://yandex.ru/");
+        basePage.open(UrlGlavnaya);
 
         //Используем методы из класса yandexSearch, можно их вызывать через точку так как там использован return this
         yandexSearch
-                .inStrokaSearch()
+                .StrokaSearch("Java")
                 .clicSearch();
+        yandexRezultPage
+                .checkCauntRezult();
+
     }
 
 }
