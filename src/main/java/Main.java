@@ -6,8 +6,8 @@ import org.openqa.selenium.WebDriver;
 
 import java.util.Random;
 
-public class Main  {
-    public static void main(String[] args){
+public class Main {
+    public static void main(String[] args) {
 //        System.setProperty("webdriver.chrome.driver","C:\\Selen\\drivers\\chromedriver.exe");
 //        ChromeDriver driver = new ChromeDriver();
 //
@@ -18,59 +18,38 @@ public class Main  {
 //        driver.findElement(buttonSearch).click();
 //        System.out.println();
 
-        int height = 10;
-        int width = 10;
-        Double line = (double)(height / 2);
-        long line1 = Math.round(line);
-        int maxRandom = 100000;
+
+        Item Perviy = new Item (10, 20, "Первый");
+        Item Vtoroy = new Item (9, 20, "Второй");
 
 
-        int [] [] arr = new int[height][width];
-        Random num = new Random();
-
-        for (int i = 0;i < arr.length; i++){
-            for (int j = 0;j < arr[i].length; j++){
-                arr[i][j] = num.nextInt(maxRandom);
-            }
-        }
-        for (int i = 0;i < arr.length; i++){
-            System.out.println();
-            for (int j = 0;j < arr[i].length; j++){
-                System.out.print(arr[i][j]+ " ");
-            }
-        }
-        int requiredIndex = width - 1;
-        int comparisonValues = maxRandom;
-        int smallest = maxRandom;
-
-        for (int i = 0;i < arr.length; i++){
-
-            for (int j = 0;j < arr[i].length; j++){
-                if (j == requiredIndex){
-                    comparisonValues = arr[i][j];
-                }
-                if (height%2 > 0 & i == line1){
-                    break;
-                }
-
-                else if (comparisonValues < smallest){
-                    smallest = comparisonValues;
-                }
-            }
-            requiredIndex--;
-        }
-        System.out.println();
-        System.out.println(smallest);
-
-
-
-
-
-
-
+        Boolean a = Item.sravnenie(Perviy , Vtoroy);
+        System.out.println(a);
 
 
     }
 
+    public static class Item {
+        int weight;
+        int cost;
+        String name;
+        public Item(int weight, int cost, String name) {
+            this.weight = weight;
+            this.cost = cost;
+            this.name = name;
+        }
 
-}
+        public static Boolean sravnenie (Item a, Item b){
+            if (a.cost == b.cost & a.weight ==b.weight) {
+                return true;
+            }
+                else
+                    return false;
+            }
+
+        }
+
+    }
+
+
+
